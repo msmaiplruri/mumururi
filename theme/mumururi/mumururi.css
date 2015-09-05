@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+body {
+    width: 70%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+a {
+    color: #db7093;
+    text-decoration: none;
+}
+
+.sep {
+    display: none;
+}
+
+.edit-today {
+    margin-left: 5px;
+}
+
+.day {
+    margin-bottom: 60px;
+}
+
+.day h2 {
+    font-size: 100%;
+    border-bottom: 1px solid #db7093;
+    padding-bottom: 0.3em;
+}
+
+.content {
+    margin: 40px 0;
+}
+
+.sidebar {
+}
+
+.footer {
+    margin-bottom: 20px;
+}
