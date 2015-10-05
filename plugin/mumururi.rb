@@ -49,6 +49,54 @@ def edit_today_link( date, title )
 	end
 end
 
+# ツッコミのメールアドレスを非表示
+def comment_name_label; "名前" end
+def comment_description; "" end
+
+def comment_form_text
+	unless @diary then
+		@diary = @diaries[@date.strftime( '%Y%m%d' )]
+		return '' unless @diary
+	end
+
+	r = ''
+	unless @conf.hide_comment_form then
+		r = <<-FORM
+			<div class="form">
+		FORM
+		if @diary.count_comments( true ) >= @conf.comment_limit_per_day then
+			r << <<-FORM
+				<div class="caption"><a name="c">#{comment_limit_label}</a></div>
+			FORM
+		else
+			r << <<-FORM
+				<div class="caption"><a name="c">#{comment_description}</a></div>
+				<form class="comment" name="comment-form" method="post" action="#{h @conf.index}"><div>
+				<input type="hidden" name="date" value="#{ @date.strftime( '%Y%m%d' )}">
+				<div class="field name">
+					#{comment_name_label}
+                    <br>
+                    <input class="field" name="name" value="#{h( @conf.to_native(@cgi.cookies['tdiary'][0] || '' ))}">
+				</div>
+				<input class="field" name="mail" value="" type="hidden">
+				<div class="textarea">
+					#{comment_body_label}
+                    <br>
+                    <textarea name="body" cols="60" rows="5"></textarea>
+				</div>
+				<div class="button">
+					<input type="submit" name="comment" value="#{h comment_submit_label}">
+				</div>
+				</div></form>
+			FORM
+		end
+		r << <<-FORM
+			</div>
+		FORM
+	end
+    r
+end
+
 # Local Variables:
 # mode: ruby
 # indent-tabs-mode: t

@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+body {
+    width: 70%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+a {
+    color: @base;
+    text-decoration: none;
+}
+
+.backquote {
+    color: @backquote;
+    font-size: 600%;
+    position: absolute;
+    font-family: serif
+}
+
+blockquote:before {
+    .backquote;
+    content: "“";
+    top: 0;
+    left: 0;
+    line-height: 1em;
+}
+
+blockquote:after {
+    .backquote;
+    font-family: serif;
+    content: "”";
+    right: 0;
+    bottom: 0;
+    line-height: 0;
+}
+
+blockquote {
+    background: @blockquote;
+    position: relative;
+    margin: 0.8em 0;
+    padding: 20px 55px;
+ }
+ 
+ .sep {
+    display: none;
+}
+
+.edit-today {
+    margin-left: 5px;
+}
+
+.day {
+    margin-bottom: 60px;
+}
+
+.day h2 {
+    font-size: 100%;
+    border-bottom: 1px solid @base;
+    padding-bottom: 0.3em;
+}
+
+.content {
+    margin: 40px 0;
+}
+
+.footer{
+    margin-bottom: 20px;
+}
