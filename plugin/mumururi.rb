@@ -14,12 +14,14 @@ def jquery_tag; "" end
 
 def script_tag; "" end
 
+def navi_latest; "TOPに戻る" end
+
 # 最新
 # 追記
 # 編集
 # を非表示
 def navi_item( link, label, rel = nil )
-    unless /^(edit)$/ =~ @mode then
+    unless /(^category)/ =~ @mode then
         if label == h(navi_latest) then return "" end
     end
     if label == h(navi_update) then return "" end
