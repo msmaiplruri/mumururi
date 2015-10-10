@@ -11,8 +11,8 @@ def doctype
 end
 
 def jquery_tag; "" end
-
 def script_tag; "" end
+def default_ogp; "" end
 
 def navi_latest; "TOPに戻る" end
 
