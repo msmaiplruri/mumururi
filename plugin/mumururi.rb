@@ -20,6 +20,7 @@ def navi_latest; "TOPに戻る" end
 # 追記
 # 編集
 # を非表示
+=begin
 def navi_item( link, label, rel = nil )
     unless /(^category)/ =~ @mode then
         if label == h(navi_latest) then return "" end
@@ -30,6 +31,7 @@ def navi_item( link, label, rel = nil )
 	result << %Q[ rel="#{rel}"] if rel
 	result << %Q[>#{label}</a></span>\n]
 end
+=end
 
 # 前提: edit_today.rb
 # 日にも編集リンクをつける
