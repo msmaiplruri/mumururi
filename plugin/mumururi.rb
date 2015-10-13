@@ -14,7 +14,7 @@ def jquery_tag; "" end
 def script_tag; "" end
 def default_ogp; "" end
 
-def navi_latest; "TOPに戻る" end
+#def navi_latest; "TOPに戻る" end
 
 # 最新
 # 追記
