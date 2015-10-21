@@ -10,7 +10,7 @@ def doctype
 	%Q[<!DOCTYPE html>]
 end
 
-unless @mode == 'edit' then
+unless @mode =~ /(edit|preview|update|append|form)/ then
     def jquery_tag; "" end
     def script_tag; "" end
 end
