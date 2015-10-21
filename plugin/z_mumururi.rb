@@ -10,8 +10,11 @@ def doctype
 	%Q[<!DOCTYPE html>]
 end
 
-def jquery_tag; "" end
-def script_tag; "" end
+unless @mode == 'edit' then
+    def jquery_tag; "" end
+    def script_tag; "" end
+end
+
 def default_ogp; "" end
 
 #def navi_latest; "TOPに戻る" end
