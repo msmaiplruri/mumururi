@@ -12,6 +12,10 @@ end
 
 def default_ogp; "" end
 
+def robot_control
+    '<meta name="robots" content="noindex,nofollow,noarchive">'
+end
+
 #def navi_latest; "TOPに戻る" end
 
 # 最新
