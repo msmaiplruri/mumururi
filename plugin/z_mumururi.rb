@@ -114,6 +114,15 @@ def search_input_form( q )
     HTML
 end
 
+# 前提: category.rb ver 5.0.0
+# gemで取得したtdiaryのcategory.rbに何故か無かったので追加
+def category_list
+    @categories.map do |c|
+        %Q|<a href="#{h @index}?category=#{h c}">#{h c}</a>|
+    end.join(" | \n")
+end
+@conf["category.header2"] = %Q[<p>Categories |\n<%= category_list %>\n</p>\n]
+
 # Local Variables:
 # mode: ruby
 # indent-tabs-mode: t
